@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS default;
 
-CREATE TABLE IF NOT EXISTS default.dummy_table (
+CREATE TABLE IF NOT EXISTS default.dummy_table_tmp (
     id UInt64,
     name String,
     created_at DateTime

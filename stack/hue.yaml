@@ -13,9 +13,11 @@ services:
     volumes:
       - ./configs/hue.ini:/usr/share/hue/desktop/conf/hue.ini
     healthcheck:
-      test: ["CMD", "nc", "-z", "localhost", "8888"]
+      test: ["CMD", "curl", "-f", "http://localhost:8888"]
       interval: 10s
-      retries: 10
+      timeout: 5s
+      retries: 5
+      start_period: 30s
     networks:
         - sparknet
 

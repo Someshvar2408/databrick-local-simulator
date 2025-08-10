@@ -72,6 +72,7 @@ services:
       S3_ENDPOINT: http://localstack:4566
     ports:
       - "9083:9083"
+      - "10000:10000"
     volumes:
       - ./configs/hive/hive-site.xml:/opt/hive/conf/hive-site.xml
     healthcheck:
