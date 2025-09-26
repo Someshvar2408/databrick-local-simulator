@@ -8,7 +8,7 @@ echo "Downloading files..."
 cd /tmp
 
 # Define URL and target directory
-SPARK_URL="https://downloads.apache.org/spark/spark-4.0.0/spark-4.0.0-bin-hadoop3.tgz"
+SPARK_URL="https://archive.apache.org/dist/spark/spark-4.0.0/spark-4.0.0-bin-hadoop3.tgz"
 SPARK_TGZ="spark-4.0.0-bin-hadoop3.tgz"
 TARGET_DIR="/downloads"
 

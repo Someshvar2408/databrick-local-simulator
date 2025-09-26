@@ -12,18 +12,18 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Spark
-RUN wget https://downloads.apache.org/spark/spark-4.0.0/spark-4.0.0-bin-hadoop3.tgz && \
-    tar -xzf spark-4.0.0-bin-hadoop3.tgz -C /opt && \
+COPY ./tmp/spark-4.0.0-bin-hadoop3.tgz .
+RUN tar -xzf spark-4.0.0-bin-hadoop3.tgz -C /opt && \
     ln -s /opt/spark-4.0.0-bin-hadoop3 /opt/spark && \
     rm spark-4.0.0-bin-hadoop3.tgz
 
 
-ADD https://jdbc.postgresql.org/download/postgresql-42.6.0.jar /opt/spark/jars/
-ADD https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.4.1/hadoop-aws-3.4.1.jar /opt/spark/jars/
-ADD https://repo1.maven.org/maven2/software/amazon/awssdk/bundle/2.24.6/bundle-2.24.6.jar /opt/spark/jars/
-ADD https://repo1.maven.org/maven2/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar /opt/spark/jars/
-ADD https://repo1.maven.org/maven2/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar /opt/spark/jars/
-ADD https://repo1.maven.org/maven2/com/sun/xml/bind/jaxb-impl/2.3.1/jaxb-impl-2.3.1.jar /opt/spark/jars/
+COPY ./tmp/postgresql-42.6.0.jar /opt/spark/jars/
+COPY ./tmp/hadoop-aws-3.4.1.jar /opt/spark/jars/
+COPY ./tmp/bundle-2.24.6.jar /opt/spark/jars/
+COPY ./tmp/javax.activation-api-1.2.0.jar /opt/spark/jars/
+COPY ./tmp/jaxb-api-2.3.1.jar /opt/spark/jars/
+COPY ./tmp/jaxb-impl-2.3.1.jar /opt/spark/jars/
 
 RUN chmod 777 /opt/spark/jars/*.jar
 

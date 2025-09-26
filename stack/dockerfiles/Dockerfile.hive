@@ -12,9 +12,9 @@ ENV PATH=$HIVE_HOME/bin:$PATH
 COPY ./add/hive_entrypoint.sh /entrypoint.sh
 
 # Optionally install JDBC drivers (PostgreSQL example)
-ADD https://jdbc.postgresql.org/download/postgresql-42.6.0.jar $HIVE_HOME/lib/
-ADD https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.1.0/hadoop-aws-3.1.0.jar $HIVE_HOME/lib/
-ADD https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.271/aws-java-sdk-bundle-1.11.271.jar $HIVE_HOME/lib/
+COPY ./tmp/postgresql-42.6.0.jar $HIVE_HOME/lib/
+COPY ./tmp/hadoop-aws-3.1.0.jar $HIVE_HOME/lib/
+COPY ./tmp/aws-java-sdk-bundle-1.11.271.jar $HIVE_HOME/lib/
 
 
 # Start the Hive metastore

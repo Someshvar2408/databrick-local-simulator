@@ -58,13 +58,20 @@ Ensure Docker and Docker Compose are installed and running before starting the e
    ```sh
    git clone https://github.com/maarthala/databrick-local-simulator.git
    ```
-2. **Start the stack:**  
+2. **Download common files:**  
+   ```sh
+   # Download files to stack/dockerfiles/tmp directory
+   sh init.sh
+   ```
+   Depending on the network speed, it might take 5 to 15 minutes to download required files
+
+3. **Start the stack:**  
    ```sh
    # containes docker compose yaml files
    sh env-up.sh
    ```
-   Depending on the network speed, it might take 5 to 15 minutes to prepare the environment for the first time
-3. **Open the dashboard:**  
+   Depending on the network speed, it might take 5 to 60 minutes to prepare the environment for the first time
+4. **Open the dashboard:**  
 
 ![Data Engineering Pipeline Dashboard](./dashboard.png)
 
