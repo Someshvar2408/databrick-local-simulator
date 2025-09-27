@@ -1,5 +1,3 @@
-FROM gethue/hue:latest
+FROM gethue/hue:20250414-140101
 USER root
 RUN pip install trino
-
-

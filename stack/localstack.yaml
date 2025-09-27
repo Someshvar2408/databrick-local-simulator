@@ -18,7 +18,7 @@ services:
       - sparknet
 
   trino:
-    image: trinodb/trino:latest
+    image: trinodb/trino:473
     restart: always
     container_name: trino
     ports:
