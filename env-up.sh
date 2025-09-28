@@ -11,4 +11,4 @@ docker compose \
     -f stack/app.yaml \
     -f stack/hue.yaml \
     -f stack/home.yaml \
-up -d
+up -d --build

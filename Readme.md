@@ -83,8 +83,13 @@ To shut down the environment:
 ```sh
 sh env-down.sh
 ```
-
 > **Note:** When you bring down the stack, all data stored in services like Postgres, ClickHouse, and S3 will be deleted. Only files in the `/stack/code` directory (such as Jupyter notebooks and Airflow DAGs) are persisted across restarts.
+
+To Clean Stack
+> **Note:** When you clean the stack, it will remove all images built for this stack but keep the base images as it is. Brining the stack up will build the stack images from base images.
+```sh
+sh remove-stack.sh
+```
 
 To completely clean up Docker resources (including unused images, containers, and volumes):
 ```sh
