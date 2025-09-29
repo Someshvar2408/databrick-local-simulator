@@ -59,9 +59,10 @@ Ensure Docker and Docker Compose are installed and running before starting the e
    git clone https://github.com/maarthala/databrick-local-simulator.git
    ```
 2. **Download common files:**  
-   ```sh
+   ```bash
+   # make sure bash, curl is available.
    # Download files to stack/dockerfiles/tmp directory
-   sh init.sh
+   bash init.sh
    ```
    Depending on the network speed, it might take 5 to 15 minutes to download required files
 
