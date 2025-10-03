@@ -28,7 +28,7 @@ for url in "${URLS[@]}"; do
     echo "✅ $filename already exists, skipping."
   else
     echo "⬇️  Downloading $filename ..."
-    curl -L --progress-bar -o "$filepath" "$url"
+    curl --max-time 300 -L --progress-bar -o "$filepath" "$url"
   fi
 done
 

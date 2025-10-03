@@ -47,3 +47,16 @@ fi
 echo
 
 echo "===== Docker Cleanup Completed ====="
+# 4️⃣ Remove volumes starting with stack-
+echo "Removing volumes with names starting with 'stack-'..."
+STACK_VOLUMES=$(docker volume ls --format "{{.Name}}")
+
+if [ -n "$STACK_VOLUMES" ]; then
+    echo "Found volumes:"
+    echo "$STACK_VOLUMES"
+    docker volume rm $STACK_VOLUMES
+    echo "Volumes removed successfully."
+else
+    echo "No volumes found with name starting with 'stack-'."
+fi
+echo
