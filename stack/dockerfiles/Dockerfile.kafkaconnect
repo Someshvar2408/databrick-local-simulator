@@ -1,0 +1,11 @@
+FROM confluentinc/cp-kafka-connect:7.5.0
+
+USER root
+RUN confluent-hub install --no-prompt confluentinc/kafka-connect-s3:latest
+# Copy the connector init script into the container
+
+USER appuser
+COPY ./add/kafka-init-s3-connector.sh /tmp/init-s3-connector.sh
+
+# Override the default entrypoint to deploy connector after Connect starts
+ENTRYPOINT ["/bin/bash", "-c", "/etc/confluent/docker/run & /tmp/init-s3-connector.sh"]
