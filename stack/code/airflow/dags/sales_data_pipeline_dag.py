@@ -12,12 +12,12 @@ default_args = {
     'retries': 1,
     'retry_delay': timedelta(minutes=1),
 }
-
+#  schedule="*/5 * * * *",
 # Create DAG
 with DAG(
     dag_id='sales_data_pipeline',
     default_args=default_args,
-    description='Test Spark DAG with Airflow',
+    description='Prepare financial sales data and upload to customer shared folder in aws s3',
     schedule=None,
     start_date=datetime(2024, 1, 1),
     catchup=False,
