@@ -1,0 +1,37 @@
+1. Create s3 bucket customers
+
+2. Upload file or files
+
+3. Create new schema or use existing.
+CREATE SCHEMA hive.mybusiness WITH (location = 's3a://customers/');
+
+
+4. Create a table to query customers data
+CREATE TABLE hive.mybusiness.customer (
+	Index VARCHAR,
+	CustomerId VARCHAR,
+	FirstName VARCHAR,
+	LastName VARCHAR,
+	Company VARCHAR,
+	City VARCHAR,
+	Country VARCHAR,
+	Phone1 VARCHAR,
+	Phone2 VARCHAR,
+	Email VARCHAR,
+	SubscriptionDate VARCHAR,
+	Website VARCHAR
+)
+WITH (
+  external_location = 's3a://customers/',
+  format = 'CSV',
+  skip_header_line_count = 1
+);
+
+5. Query the data 
+Select * from hive.mybusiness.customer;
+Select count(*) from hive.mybusiness.customer;
+
+6. Add more data by uploading to S3://customers
+
+7. Query the data
+Select count(*) from hive.mybusiness.customer;
