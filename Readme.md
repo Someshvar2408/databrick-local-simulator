@@ -181,7 +181,9 @@ parquet-tools show --endpoint-url=http://localhost:4566 s3://demo-bucket/northwi
 
 ### Querying S3 Data with Hue (Athena/Glue AWS-like Queries)
 
-Hue is commong Query solution to query Hive, Postgres, Clickhouse etc
+Read extra steps required for Hue to work with kafka stream to clickhouse & S3 at [`Trino.md`](./stack/code/trino/readme.md)
+
+Hue is common Query solution to query Hive, Postgres, Clickhouse etc
 
 To query S3 data in a way similar to AWS Athena, use Hue, which is available at [http://localhost:8009](http://localhost:8009).
 

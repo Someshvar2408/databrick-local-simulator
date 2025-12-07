@@ -1,3 +1,5 @@
+# Trino->hive.clickstream
+
 CREATE SCHEMA hive.clickstream WITH (location = 's3a://demo-bucket/clicks/');
 
 CREATE TABLE hive.clickstream.user_clicks (

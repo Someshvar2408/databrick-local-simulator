@@ -1,3 +1,4 @@
+# not sure when we have this file
 CREATE TABLE default.user_clicks
 (
     timestamp DateTime64(6),
@@ -11,3 +12,14 @@ CREATE TABLE default.user_clicks
 ORDER BY timestamp;
 
 
+CREATE TABLE default.user_clickstream
+(
+    timestamp DateTime64(6),
+    user_id UInt32,
+    session_id String,
+    product_id UInt32,
+    action String,
+    referrer String,
+    user_agent String
+) ENGINE = MergeTree()
+ORDER BY timestamp;
